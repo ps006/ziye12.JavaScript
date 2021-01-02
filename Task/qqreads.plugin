@@ -1,0 +1,18 @@
+
+// QQ阅读脚本   更新日期：11.26   by：ziye
+// CK入口，👉🏿 http://m.q.qq.com/a/s/f83eeecc90281e49cd9b8b67c5cd37f6  
+
+hostname = mqqapi.reader.qq.com
+
+[Script]
+# 企鹅读书获取cookie
+http-request ^https://mqqapi\.reader\.qq\.com/log/v4/mqq/track script-path=https://raw.githubusercontent.com/ztxtop/ziye12.JavaScript/master/Task/qqreads.js, requires-body=1, tag=企鹅读书获取更新body
+
+# 企鹅读书获取时长cookie
+http-request ^https://mqqapi\.reader\.qq\.com/mqq/addReadTimeWithBid? script-path=https://raw.githubusercontent.com/ztxtop/ziye12.JavaScript/master/Task/qqreads.js, tag=企鹅读书获取时长cookie
+
+# 企鹅阅读定时任务
+# cron "10 5/21 0/4 * * *" script-path=https://raw.githubusercontent.com/ztxtop/ziye12.JavaScript/master/Task/qqreads.js, enabled=true, tag=QQ阅读-ziye
+# cron "10 10/21 1/4 * * *" script-path=https://raw.githubusercontent.com/ztxtop/ziye12.JavaScript/master/Task/qqreads.js, enabled=true, tag=QQ阅读-ziye
+# cron "10 15/21 2/4 * * *" script-path=https://raw.githubusercontent.com/ztxtop/ziye12.JavaScript/master/Task/qqreads.js, enabled=true, tag=QQ阅读-ziye
+# cron "10 20/21 3/4 * * *" script-path=https://raw.githubusercontent.com/ztxtop/ziye12.JavaScript/master/Task/qqreads.js, enabled=true, tag=QQ阅读-ziye
