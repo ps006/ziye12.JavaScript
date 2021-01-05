@@ -587,7 +587,7 @@ function qqreadtime(ac) {
   return new Promise((resolve, reject) => {
     $.log('阅读时长上传。。。');
     try {
-      const ms = TIME * 10000;
+      const ms = TIME * 10000 + Math.floor(Math.random(1)*10000+1);
       const toqqreadtimeurl = {
         url: ac.qqreadtimeurlVal.replace(/(readTime=)\d+(.+readTime%22%3A)\d+/, `$1${ms}$2${ms}`),
         headers: JSON.parse(ac.qqreadtimeheaderVal),
